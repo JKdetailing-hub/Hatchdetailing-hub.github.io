@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hatch Mobile Detailing — Professional Mobile Detailing</title>
+  <meta name="description" content="Hatch Mobile Detailing — Bringing the shine to you. Full interior & exterior mobile detailing, add-ons, and easy booking." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23072A4B'/%3E%3Ctext x='50' y='57' font-size='36' fill='%23fff' font-family='Arial' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E" />
+  <style>
+    :root{
+      --accent:#0b64a4; /* deep blue */
+      --accent-2:#00a3d9; /* bright aqua */
+      --bg:#f7fbff;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --radius:14px;
+      --max-width:1100px;
+      --shadow: 0 8px 24px rgba(11,100,164,0.12);
+      --glass: rgba(255,255,255,0.7);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:linear-gradient(180deg,var(--bg),#eef7ff); color:#0f1724; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    header{position:sticky; top:12px; z-index:40; display:flex; justify-content:center}
+    .nav-wrap{width:95%; max-width:var(--max-width); display:flex; align-items:center; gap:16px; background:linear-gradient(90deg, rgba(255,255,255,0.7), rgba(255,255,255,0.5)); padding:10px 14px; border-radius:999px; box-shadow:var(--shadow); backdrop-filter: blur(6px)}
+    .logo{display:flex; gap:12px; align-items:center}
+    .logo .mark{width:44px; height:44px; background:linear-gradient(135deg,var(--accent),var(--accent-2)); border-radius:10px; display:flex; align-items:center; justify-content:center; color:white; font-weight:700}
+    nav{margin-left:auto; display:flex; gap:6px}
+    nav a{padding:8px 12px; border-radius:10px; text-decoration:none; color:var(--accent); font-weight:600}
+    nav a.btn{background:var(--accent); color:white}
+
+    main{padding:36px 12px 160px}
+    .container{max-width:var(--max-width); margin:0 auto}
+
+    /* Hero */
+    .hero{display:grid; grid-template-columns:1fr 420px; gap:28px; align-items:center}
+    .hero-card{background:var(--card); padding:28px; border-radius:var(--radius); box-shadow:var(--shadow)}
+    .eyebrow{display:inline-block; padding:6px 10px; background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:white; border-radius:999px; font-weight:700; font-size:13px}
+    h1{margin:12px 0 6px; font-size:32px}
+    p.lead{margin:0 0 16px; color:var(--muted)}
+    .ctas{display:flex; gap:10px; margin-top:8px}
+    .btn-primary{background:var(--accent); color:white; padding:12px 16px; border-radius:10px; border:0; cursor:pointer; font-weight:700}
+    .btn-ghost{background:transparent; border:1px solid rgba(11,100,164,0.12); padding:10px 14px; border-radius:10px; cursor:pointer}
+
+    /* Booking form */
+    .booking{display:flex; flex-direction:column; gap:10px}
+    .input, textarea, select{width:100%; padding:10px 12px; border-radius:8px; border:1px solid #e6eef8; font-size:15px}
+    label{font-size:13px; color:var(--muted)}
+
+    /* Services */
+    .services{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:20px}
+    .service{background:var(--card); padding:16px; border-radius:12px; box-shadow:0 6px 18px rgba(9,29,46,0.06)}
+    .service h3{margin:0 0 8px}
+    .price{font-weight:800; color:var(--accent)}
+
+    /* Gallery */
+    .gallery{margin-top:22px; display:grid; grid-template-columns:repeat(3,1fr); gap:8px}
+    .gallery img{width:100%; height:160px; object-fit:cover; border-radius:10px}
+
+    /* Pricing table */
+    .pricing{margin-top:24px; display:flex; gap:12px}
+    .card{flex:1; background:linear-gradient(180deg,var(--card), #fbfdff); padding:18px; border-radius:12px; box-shadow:var(--shadow)}
+
+    footer{margin-top:44px; padding:28px 0; color:var(--muted); text-align:center}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .services{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:600px){
+      nav{display:none}
+      .services{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr}
+    }
+
+    /* small interactive toggles */
+    .more{display:none}
+    .service.open .more{display:block}
+    .service .open-toggle{background:transparent; border:0; color:var(--accent); font-weight:700; cursor:pointer}
+
+    /* tiny animations */
+    .fade-in{animation:fadeIn .6s ease both}
+    @keyframes fadeIn{from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-wrap container">
+      <div class="logo">
+        <div class="mark">H</div>
+        <div>
+          <div style="font-weight:800">HATCH MOBILE DETAILING</div>
+          <div style="font-size:12px; color:var(--muted)">Bringing the shine to you</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact" class="btn">Book Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card fade-in">
+        <span class="eyebrow">Mobile — On-site Service</span>
+        <h1>Professional Mobile Detailing — We Come To Your Car</h1>
+        <p class="lead">Full interior & exterior detailing, quick washes, leather revival, carpet deep-clean and protective vinyl treatments. Fast, trusted, and convenient.</p>
+        <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap">
+          <div class="ctas">
+            <button class="btn-primary" onclick="scrollToSection('contact')">Book Online</button>
+            <button class="btn-ghost" onclick="openPricingModal()">See Pricing</button>
+          </div>
+          <div style="margin-left:8px; color:var(--muted); font-size:14px">Call or text: <strong style="color:var(--accent)">708-838-8247</strong></div>
+        </div>
+
+        <div style="margin-top:18px; display:flex; gap:10px; flex-wrap:wrap">
+          <div style="background:#f0fbff; border-radius:10px; padding:8px 10px; display:flex; gap:8px; align-items:center">🚗 <div style="font-size:13px; color:var(--muted)">Mobile detail — we come to you</div></div>
+          <div style="background:#fff6f0; border-radius:10px; padding:8px 10px; display:flex; gap:8px; align-items:center">✨ <div style="font-size:13px; color:var(--muted)">Satisfaction guaranteed</div></div>
+        </div>
+
+        <div style="margin-top:18px; font-size:13px; color:var(--muted)">Email: <a href="mailto:KJFDetailing@gmail.com">KJFDetailing@gmail.com</a></div>
+      </div>
+
+      <aside class="hero-card fade-in" style="display:flex; flex-direction:column; gap:10px">
+        <div style="font-weight:800">Quick Booking</div>
+        <form id="bookingForm" class="booking" onsubmit="handleBooking(event)">
+          <label>Name <input class="input" id="name" required placeholder="Your name"></label>
+          <label>Phone or Email <input class="input" id="contactInfo" required placeholder="Phone or Email"></label>
+          <label>Service
+            <select id="serviceSelect" class="input">
+              <option value="Exterior - $40">Exterior - $40</option>
+              <option value="Interior - $65">Interior - $65</option>
+              <option value="Full Int+Ext Premium - $100">Full Int+Ext Premium - $100</option>
+              <option value="Leather Revival - $25">Leather Revival - $25</option>
+              <option value="Carpet Deep Clean - $45">Carpet Deep Clean - $45</option>
+            </select>
+          </label>
+          <label>Notes (optional) <textarea id="notes" rows="3" placeholder="Vehicle, time window, location..."></textarea></label>
+          <div style="display:flex; gap:8px">
+            <button class="btn-primary" type="submit">Request Booking</button>
+            <button type="button" class="btn-ghost" onclick="location.href='tel:7088388247'">Call Now</button>
+          </div>
+          <div id="bookingMsg" style="font-size:13px; color:var(--muted)"></div>
+        </form>
+      </aside>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <h2 style="margin-top:28px">Our Services</h2>
+      <div class="services">
+        <div class="service fade-in">
+          <h3>Exterior Wash</h3>
+          <div class="price">$40</div>
+          <p style="color:var(--muted)">Pre-wash, hand wash, wheel clean, hand dry. 30-60 minutes depending on vehicle size.</p>
+          <button class="open-toggle" onclick="toggleService(this)">More</button>
+          <div class="more" style="margin-top:8px">Includes wheel cleaning, tires dressed, glass cleaned and a final wipe-down. Add ceramic or sealant on request.</div>
+        </div>
+
+        <div class="service fade-in">
+          <h3>Interior Detail</h3>
+          <div class="price">$65</div>
+          <p style="color:var(--muted)">Full vacuum, interior glass, wipe down, rubber & carpet mat cleaning. 45-90 minutes.</p>
+          <button class="open-toggle" onclick="toggleService(this)">More</button>
+          <div class="more" style="margin-top:8px">Includes crevice blowout, dashboard & console cleaning, and optional leather conditioner (+$25 leather revival).</div>
+        </div>
+
+        <div class="service fade-in">
+          <h3>Full Int + Ext — Premium</h3>
+          <div class="price">$100</div>
+          <p style="color:var(--muted)">Comprehensive interior and exterior detail — best value for long-term care. 90–120 minutes.</p>
+          <button class="open-toggle" onclick="toggleService(this)">More</button>
+          <div class="more" style="margin-top:8px">Perfect for resale prep or seasonal maintenance. Add-ons available: leather revival, carpet deep clean.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing & Add-ons -->
+    <section id="pricing">
+      <h2 style="margin-top:24px">Add-Ons & Pricing</h2>
+      <div class="pricing">
+        <div class="card">
+          <h4>Add-Ons</h4>
+          <ul style="margin:8px 0; color:var(--muted)">
+            <li>Leather Revival — $25</li>
+            <li>Carpet Deep Clean — $45</li>
+            <li>Plastic/Vinyl Cleaner & Protector — $20</li>
+            <li>Seat / Stain Removal & Conditioner — $40</li>
+          </ul>
+          <div style="font-size:13px; color:var(--muted)">Times & prices may vary depending on vehicle condition. Contact for exact quote.</div>
+        </div>
+
+        <div class="card">
+          <h4>How It Works</h4>
+          <ol style="margin:8px 0; color:var(--muted)">
+            <li>Book online or call/text 708-838-8247.</li>
+            <li>We arrive at scheduled time with all equipment.</li>
+            <li>Pay after service (card, cash, Venmo) — invoice provided.</li>
+          </ol>
+          <div style="margin-top:8px"><strong>Email:</strong> <a href="mailto:KJFDetailing@gmail.com">KJFDetailing@gmail.com</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery">
+      <h2 style="margin-top:24px">Gallery</h2>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1200&q=60&auto=format&fit=crop" alt="Car detail 1">
+        <img src="https://images.unsplash.com/photo-1517110100-3b6b3f60728a?w=1200&q=60&auto=format&fit=crop" alt="Car detail 2">
+        <img src="https://images.unsplash.com/photo-1542365887-2fa6b0f1f1b7?w=1200&q=60&auto=format&fit=crop" alt="Car detail 3">
+      </div>
+    </section>
+
+    <!-- Contact / Footer -->
+    <section id="contact" style="margin-top:28px">
+      <h2>Contact & Booking</h2>
+      <div style="display:grid; grid-template-columns:1fr 360px; gap:18px; margin-top:12px">
+        <div class="hero-card">
+          <h3 style="margin-top:0">Ready to Book?</h3>
+          <p style="color:var(--muted)">Text or call <strong>708-838-8247</strong> or send an email to <a href="mailto:KJFDetailing@gmail.com">KJFDetailing@gmail.com</a>. Provide your vehicle, location, and preferred time window.</p>
+
+          <div style="margin-top:12px">
+            <strong>Business:</strong> HATCH MOBILE DETAILING (KJF Detailing)<br>
+            <strong>Owner:</strong> Jakub<br>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h4 style="margin-top:0">Request a Quote</h4>
+          <form onsubmit="handleQuote(event)">
+            <label>Name <input id="qname" class="input" required></label>
+            <label>Phone or Email <input id="qcontact" class="input" required></label>
+            <label>Message <textarea id="qmsg" class="input" rows="4" placeholder="Tell us about your vehicle and service needs"></textarea></label>
+            <div style="display:flex; gap:8px; margin-top:8px">
+              <button class="btn-primary" type="submit">Send Request</button>
+              <button class="btn-ghost" type="button" onclick="scrollToSection('services')">See Services</button>
+            </div>
+            <div id="quoteMsg" style="font-size:13px; color:var(--muted); margin-top:8px"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Hatch Mobile Detailing — Bringing the Shine To You • <a href="mailto:KJFDetailing@gmail.com">KJFDetailing@gmail.com</a> • 708-838-8247</div>
+    </footer>
+  </main>
+
+  <!-- Pricing modal (simple) -->
+  <div id="modal" style="position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(6,12,24,0.4); z-index:80">
+    <div style="width:96%; max-width:720px; background:white; padding:20px; border-radius:12px; box-shadow:0 20px 60px rgba(2,6,23,0.5)">
+      <div style="display:flex; justify-content:space-between; align-items:center">
+        <h3 style="margin:0">Pricing</h3>
+        <button onclick="closePricingModal()" style="background:transparent; border:0; font-size:18px; cursor:pointer">✕</button>
+      </div>
+      <div style="margin-top:12px; display:grid; grid-template-columns:repeat(3,1fr); gap:10px">
+        <div style="padding:12px; border-radius:8px; background:#fbfdff">
+          <strong>Exterior</strong>
+          <div class="price">$40</div>
+          <div style="font-size:13px; color:var(--muted)">30–60 min</div>
+        </div>
+        <div style="padding:12px; border-radius:8px; background:#fffaf7">
+          <strong>Interior</strong>
+          <div class="price">$65</div>
+          <div style="font-size:13px; color:var(--muted)">45–90 min</div>
+        </div>
+        <div style="padding:12px; border-radius:8px; background:#f7fff8">
+          <strong>Full Int + Ext</strong>
+          <div class="price">$100</div>
+          <div style="font-size:13px; color:var(--muted)">90–120 min</div>
+        </div>
+      </div>
+      <div style="margin-top:12px; color:var(--muted)">Add-ons: Leather revival $25, Carpet deep clean $45, Vinyl protect $20, Seat/stain $40.</div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function scrollToSection(id){
+      document.getElementById(id).scrollIntoView({behavior:'smooth', block:'start'});
+    }
+
+    function toggleService(btn){
+      var card = btn.closest('.service');
+      card.classList.toggle('open');
+      btn.textContent = card.classList.contains('open') ? 'Less' : 'More';
+    }
+
+    function openPricingModal(){
+      document.getElementById('modal').style.display = 'flex';
+    }
+    function closePricingModal(){
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    // Booking: craft an email link so it opens user's email client with prefilled body
+    function handleBooking(e){
+      e.preventDefault();
+      var name = document.getElementById('name').value.trim();
+      var contact = document.getElementById('contactInfo').value.trim();
+      var service = document.getElementById('serviceSelect').value;
+      var notes = document.getElementById('notes').value.trim();
+      var body = `Booking request%0D%0AName: ${encodeURIComponent(name)}%0D%0AContact: ${encodeURIComponent(contact)}%0D%0AService: ${encodeURIComponent(service)}%0D%0ANotes: ${encodeURIComponent(notes)}`;
+      var mail = `mailto:KJFDetailing@gmail.com?subject=${encodeURIComponent('Booking request from website')}&body=${body}`;
+      // open mail client
+      window.location.href = mail;
+      document.getElementById('bookingMsg').textContent = 'Your email client should open to complete the booking. If it does not, email KJFDetailing@gmail.com.';
+    }
+
+    // Quote form similarly
+    function handleQuote(e){
+      e.preventDefault();
+      var n = document.getElementById('qname').value.trim();
+      var c = document.getElementById('qcontact').value.trim();
+      var m = document.getElementById('qmsg').value.trim();
+      var body = `Quote request%0D%0AName: ${encodeURIComponent(n)}%0D%0AContact: ${encodeURIComponent(c)}%0D%0AMessage: ${encodeURIComponent(m)}`;
+      window.location.href = `mailto:KJFDetailing@gmail.com?subject=${encodeURIComponent('Quote request from website')}&body=${body}`;
+      document.getElementById('quoteMsg').textContent = 'Email client opening — if nothing happens, send an email to KJFDetailing@gmail.com';
+    }
+
+    // small UX: close modal on outside click
+    document.getElementById('modal').addEventListener('click', function(e){
+      if(e.target === this) closePricingModal();
+    });
+
+    // Smooth reveal on scroll (very small, progressive enhancement)
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(ent=>{
+        if(ent.isIntersecting) ent.target.classList.add('fade-in');
+      })
+    },{threshold:0.12});
+    document.querySelectorAll('.service, .hero-card, .card').forEach(el=>io.observe(el));
+  </script>
+</body>
+</html>
