@@ -5,36 +5,29 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Hatch Mobile Detailing — Professional Mobile Detailing</title>
   <meta name="description" content="Hatch Mobile Detailing — Bringing the shine to you. Full interior & exterior mobile detailing, add-ons, and easy booking." />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23072A4B'/%3E%3Ctext x='50' y='57' font-size='36' fill='%23fff' font-family='Arial' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E" />
   <style>
     :root{
-      --accent:#0b64a4; /* deep blue */
-      --accent-2:#00a3d9; /* bright aqua */
+      --accent:#0b64a4;
+      --accent-2:#00a3d9;
       --bg:#f7fbff;
       --card:#ffffff;
       --muted:#6b7280;
       --radius:14px;
       --max-width:1100px;
       --shadow: 0 8px 24px rgba(11,100,164,0.12);
-      --glass: rgba(255,255,255,0.7);
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:linear-gradient(180deg,var(--bg),#eef7ff); color:#0f1724; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-    }
+    body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial; background:linear-gradient(180deg,var(--bg),#eef7ff); color:#0f1724;}
+    a{color:var(--accent)}
     header{position:sticky; top:12px; z-index:40; display:flex; justify-content:center}
-    .nav-wrap{width:95%; max-width:var(--max-width); display:flex; align-items:center; gap:16px; background:linear-gradient(90deg, rgba(255,255,255,0.7), rgba(255,255,255,0.5)); padding:10px 14px; border-radius:999px; box-shadow:var(--shadow); backdrop-filter: blur(6px)}
+    .nav-wrap{width:95%; max-width:var(--max-width); display:flex; align-items:center; gap:16px; background:linear-gradient(90deg, rgba(255,255,255,0.85), rgba(255,255,255,0.6)); padding:10px 14px; border-radius:999px; box-shadow:var(--shadow); backdrop-filter: blur(6px)}
     .logo{display:flex; gap:12px; align-items:center}
     .logo .mark{width:44px; height:44px; background:linear-gradient(135deg,var(--accent),var(--accent-2)); border-radius:10px; display:flex; align-items:center; justify-content:center; color:white; font-weight:700}
     nav{margin-left:auto; display:flex; gap:6px}
     nav a{padding:8px 12px; border-radius:10px; text-decoration:none; color:var(--accent); font-weight:600}
     nav a.btn{background:var(--accent); color:white}
-
     main{padding:36px 12px 160px}
     .container{max-width:var(--max-width); margin:0 auto}
-
-    /* Hero */
     .hero{display:grid; grid-template-columns:1fr 420px; gap:28px; align-items:center}
     .hero-card{background:var(--card); padding:28px; border-radius:var(--radius); box-shadow:var(--shadow)}
     .eyebrow{display:inline-block; padding:6px 10px; background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:white; border-radius:999px; font-weight:700; font-size:13px}
@@ -43,29 +36,18 @@
     .ctas{display:flex; gap:10px; margin-top:8px}
     .btn-primary{background:var(--accent); color:white; padding:12px 16px; border-radius:10px; border:0; cursor:pointer; font-weight:700}
     .btn-ghost{background:transparent; border:1px solid rgba(11,100,164,0.12); padding:10px 14px; border-radius:10px; cursor:pointer}
-
-    /* Booking form */
     .booking{display:flex; flex-direction:column; gap:10px}
     .input, textarea, select{width:100%; padding:10px 12px; border-radius:8px; border:1px solid #e6eef8; font-size:15px}
     label{font-size:13px; color:var(--muted)}
-
-    /* Services */
     .services{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:20px}
     .service{background:var(--card); padding:16px; border-radius:12px; box-shadow:0 6px 18px rgba(9,29,46,0.06)}
     .service h3{margin:0 0 8px}
     .price{font-weight:800; color:var(--accent)}
-
-    /* Gallery */
-    .gallery{margin-top:22px; display:grid; grid-template-columns:repeat(3,1fr); gap:8px}
+    .gallery{margin-top:22px; display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:8px}
     .gallery img{width:100%; height:160px; object-fit:cover; border-radius:10px}
-
-    /* Pricing table */
     .pricing{margin-top:24px; display:flex; gap:12px}
     .card{flex:1; background:linear-gradient(180deg,var(--card), #fbfdff); padding:18px; border-radius:12px; box-shadow:var(--shadow)}
-
     footer{margin-top:44px; padding:28px 0; color:var(--muted); text-align:center}
-
-    /* Responsive */
     @media (max-width:980px){
       .hero{grid-template-columns:1fr}
       .services{grid-template-columns:repeat(2,1fr)}
@@ -76,13 +58,9 @@
       .services{grid-template-columns:1fr}
       .gallery{grid-template-columns:1fr}
     }
-
-    /* small interactive toggles */
     .more{display:none}
     .service.open .more{display:block}
     .service .open-toggle{background:transparent; border:0; color:var(--accent); font-weight:700; cursor:pointer}
-
-    /* tiny animations */
     .fade-in{animation:fadeIn .6s ease both}
     @keyframes fadeIn{from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none}}
   </style>
@@ -213,9 +191,13 @@
     <section id="gallery">
       <h2 style="margin-top:24px">Gallery</h2>
       <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1200&q=60&auto=format&fit=crop" alt="Car detail 1">
-        <img src="https://images.unsplash.com/photo-1517110100-3b6b3f60728a?w=1200&q=60&auto=format&fit=crop" alt="Car detail 2">
-        <img src="https://images.unsplash.com/photo-1542365887-2fa6b0f1f1b7?w=1200&q=60&auto=format&fit=crop" alt="Car detail 3">
+        <!-- Drop your own photos into the images/ folder and name them car1.jpg, car2.jpg, etc. -->
+        <img src="images/car1.jpg" alt="Car detail 1">
+        <img src="images/car2.jpg" alt="Car detail 2">
+        <img src="images/car3.jpg" alt="Car detail 3">
+        <img src="images/car4.jpg" alt="Car detail 4">
+        <img src="images/car5.jpg" alt="Car detail 5">
+        <img src="images/car6.jpg" alt="Car detail 6">
       </div>
     </section>
 
@@ -302,37 +284,32 @@
       document.getElementById('modal').style.display = 'none';
     }
 
-    // Booking: craft an email link so it opens user's email client with prefilled body
     function handleBooking(e){
       e.preventDefault();
       var name = document.getElementById('name').value.trim();
       var contact = document.getElementById('contactInfo').value.trim();
       var service = document.getElementById('serviceSelect').value;
       var notes = document.getElementById('notes').value.trim();
-      var body = `Booking request%0D%0AName: ${encodeURIComponent(name)}%0D%0AContact: ${encodeURIComponent(contact)}%0D%0AService: ${encodeURIComponent(service)}%0D%0ANotes: ${encodeURIComponent(notes)}`;
-      var mail = `mailto:KJFDetailing@gmail.com?subject=${encodeURIComponent('Booking request from website')}&body=${body}`;
-      // open mail client
+      var body = 'Booking request\nName: ' + name + '\nContact: ' + contact + '\nService: ' + service + '\nNotes: ' + notes;
+      var mail = 'mailto:KJFDetailing@gmail.com?subject=' + encodeURIComponent('Booking request from website') + '&body=' + encodeURIComponent(body);
       window.location.href = mail;
       document.getElementById('bookingMsg').textContent = 'Your email client should open to complete the booking. If it does not, email KJFDetailing@gmail.com.';
     }
 
-    // Quote form similarly
     function handleQuote(e){
       e.preventDefault();
       var n = document.getElementById('qname').value.trim();
       var c = document.getElementById('qcontact').value.trim();
       var m = document.getElementById('qmsg').value.trim();
-      var body = `Quote request%0D%0AName: ${encodeURIComponent(n)}%0D%0AContact: ${encodeURIComponent(c)}%0D%0AMessage: ${encodeURIComponent(m)}`;
-      window.location.href = `mailto:KJFDetailing@gmail.com?subject=${encodeURIComponent('Quote request from website')}&body=${body}`;
+      var body = 'Quote request\nName: ' + n + '\nContact: ' + c + '\nMessage: ' + m;
+      window.location.href = 'mailto:KJFDetailing@gmail.com?subject=' + encodeURIComponent('Quote request from website') + '&body=' + encodeURIComponent(body);
       document.getElementById('quoteMsg').textContent = 'Email client opening — if nothing happens, send an email to KJFDetailing@gmail.com';
     }
 
-    // small UX: close modal on outside click
     document.getElementById('modal').addEventListener('click', function(e){
       if(e.target === this) closePricingModal();
     });
 
-    // Smooth reveal on scroll (very small, progressive enhancement)
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(ent=>{
         if(ent.isIntersecting) ent.target.classList.add('fade-in');
